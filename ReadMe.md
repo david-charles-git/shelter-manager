@@ -129,8 +129,33 @@ When the user submits the form, the following will happen:
 
 ### Developer installation
 
-1. Clone the repository to your local machine from <>.
+1. Clone the repository to your local machine from:
 
+``` bash
+git clone https://github.com/david-charles-git/shelter-manager.git
+```
+
+2. Enter the directory:
+
+``` bash
+cd shelter-manager
+```
+
+3. Install the dependencies:
+
+``` bash
+yarn install
+```
+
+### Development
+
+Typescript is used to write the plugin. The source code can be found and **must** by added in the root of the typescript directory for the plugin to build correctly. The typescript is compiled and minified to the includes/dist directory. The plugin is compiled using a custom build script that can be found at _bash/build.sh.
+
+Scss is used to write the styles for the plugin. The source code can be found and **must** by added in the root of the sass directory for the plugin to build correctly. The plugin is compiled to the includes/dist directory. The Scss is compiled using a custom build script that can be found at _bash/build.sh.
+
+The plugin uses Composer to manage its dependencies. The composer.json, composer.lock, vendor directory file can be found in the root of the plugin directory. The plugin dependencies are: 
+
+- **Carbon Fields** - This is used to create the custom fields pages, and options for the plugin.
 
 
 ## Shelter Manager Database example return object
