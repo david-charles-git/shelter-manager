@@ -11,7 +11,7 @@
         "uglify-js": "^3.17.4"
     },
     "scripts": {
-        "build": "bash bash/build.sh",
-        "zip": "yarn build && bash bash/zip.sh"
+        "build": "bash _bash/build.sh",
+        "zip": "yarn build && _bash bash/zip.sh"
     }
 }
