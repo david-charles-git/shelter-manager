@@ -1,0 +1,41 @@
+# Set the maximum line length to 120 characters
+printWidth: 120
+
+# Use 2 spaces for indentation
+tabWidth: 2
+
+# Use double quotes for strings
+singleQuote: true
+
+# Add a trailing comma at the end of multi-line objects and arrays
+trailingComma: all
+
+# Use parentheses around arrow function parameters only when necessary
+arrowParens: avoid
+
+# Use the default prettier semicolon style
+semi: true
+
+# Format embedded HTML files
+embeddedLanguageFormatting: auto
+
+# Ignore formatting for files matched by the provided glob patterns
+ignore:
+  - "node_modules/**"
+  - ".git/**"
+  - "*.min.css"
+
+# Override specific formatting options for files matched by the provided glob patterns
+overrides:
+  - files: "*.json"
+    options:
+      # Format JSON files with 4 spaces for indentation
+      tabWidth: 4
+  - files: "*.py"
+    options:
+      # Format Python files with 4 spaces for indentation
+      tabWidth: 4
+  - files: "*.md"
+    options:
+      # Format Markdown files with a line width of 80 characters
+      printWidth: 80

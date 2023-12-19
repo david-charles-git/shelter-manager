@@ -1,0 +1,18 @@
+@use 'mixins' as mixins;
+
+.shelter-manager-background {
+  @include mixins.background();
+}
+
+.shelter-manager-modal {
+  @include mixins.grid();
+  @include mixins.modal();
+}
+
+.shelter-manager-grid {
+  @include mixins.grid();
+}
+
+.shelter-manager-hidden {
+  display: none;
+}

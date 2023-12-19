@@ -1,0 +1,17 @@
+{
+    "name": "shelter-manager-plugin",
+    "version": "1.0.0",
+    "main": "index.js",
+    "author": "David Charles | ip-four",
+    "license": "MIT",
+    "devDependencies": {
+        "sass": "^1.69.5",
+        "typescript": "^5.3.3",
+        "uglifycss": "^0.0.29",
+        "uglify-js": "^3.17.4"
+    },
+    "scripts": {
+        "build": "bash bash/build.sh",
+        "zip": "yarn build && bash bash/zip.sh"
+    }
+}

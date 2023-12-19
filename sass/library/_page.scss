@@ -1,0 +1,9 @@
+@use 'mixins' as mixins;
+
+.shelter-manager-animal-page {
+  padding: 100px 0;
+
+  > .inner {
+    grid-gap: 100px;
+  }
+}

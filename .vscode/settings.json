@@ -1,0 +1,18 @@
+{
+    "files.exclude": {
+        "vendor": true,
+        "uploads": true,
+        "node_modules": true,
+        "**/index.php": true,
+        "includes/dist": true,
+    },
+    "cSpell.words": [
+        "ABSPATH",
+        "adoptables",
+        "animalid",
+        "atts",
+        "dashicons",
+        "shortcode",
+        "shortcodes"
+    ]
+}

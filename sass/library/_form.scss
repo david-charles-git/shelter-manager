@@ -1,0 +1,300 @@
+@use 'mixins' as mixins;
+
+.shelter-manager-animal-adoption-form {
+  > .inner {
+    .form-header {
+      grid-gap: 0;
+      text-align: center;
+
+      > * {
+        margin: 0;
+      }
+    }
+
+    .form {
+      .success-container,
+      .error-container,
+      .loading-container {
+        display: none;
+        text-align: center;
+      }
+
+      &.success,
+      &.error,
+      &.loading {
+        .form-group {
+          display: none !important;
+        }
+      }
+
+      &.success {
+        .success-container {
+          display: block;
+        }
+
+        .form-buttons {
+          display: none;
+        }
+      }
+
+      &.error {
+        .error-container {
+          display: block;
+        }
+
+        .form-buttons {
+          display: none;
+        }
+      }
+
+      &.loading {
+        .loading-container {
+          display: block;
+        }
+
+        .form-buttons {
+          display: none;
+        }
+      }
+
+      .form-group {
+        @include mixins.grid();
+        display: none;
+        grid-gap: 0 20px;
+
+        &.active {
+          display: grid;
+        }
+      }
+    }
+
+    .form-field {
+      grid-gap: 0;
+      grid-column: 1 / span 2;
+
+      &.error {
+        input,
+        textarea,
+        select {
+          border: 1px solid red !important;
+        }
+
+        .error-message {
+          visibility: visible;
+        }
+      }
+
+      label {
+        sup {
+          &.required {
+            color: red;
+          }
+        }
+      }
+
+      .error-message {
+        margin: 0;
+        padding: 0;
+        color: red;
+        font-size: 0.8rem;
+        visibility: hidden;
+      }
+    }
+
+    .form-buttons {
+      button {
+        display: none;
+
+        &.active {
+          display: block;
+        }
+      }
+    }
+
+    .input-hidden {
+      display: none;
+    }
+
+    .input-checkbox {
+      .checkbox-group {
+        justify-content: start;
+        grid-template-columns: auto auto;
+
+        .checkbox {
+          padding: 0 1em;
+          cursor: pointer;
+
+          label {
+            margin: 0;
+            cursor: pointer;
+            padding: 0em 2em;
+            border-radius: 30px;
+          }
+        }
+      }
+    }
+
+    .input-multi-complex {
+      grid-gap: 0px;
+
+      .multi-input-values {
+        grid-template-columns: repeat(4, 1fr);
+
+        .value {
+          padding-bottom: 20px;
+
+          p {
+            margin: 0;
+          }
+
+          .button-remove {
+            margin-top: 10px;
+          }
+        }
+      }
+
+      .multi-input {
+        grid-gap: 0 20px;
+      }
+
+      .addition-button {
+        margin: 10px 0;
+      }
+    }
+
+    .input-true-false {
+      .checkbox {
+        cursor: pointer;
+
+        span {
+          width: 20px;
+          height: 20px;
+          background: #fff;
+          margin-right: 10px;
+          border-radius: 5px;
+          display: inline-block;
+          vertical-align: middle;
+          border: 1px solid black;
+        }
+
+        label {
+          margin-bottom: 0;
+          display: inline-block;
+          vertical-align: middle;
+          width: calc(100% - 35px);
+        }
+
+        &.active {
+          span {
+            background-size: 80% 80%;
+            background-position: 50% 50%;
+            background: url(../../assets/images/checkmark.png) no-repeat center center;
+          }
+        }
+      }
+    }
+
+    .input-signature {
+      position: relative;
+
+      canvas {
+        cursor: crosshair;
+        border-radius: 5px;
+        background-color: #fff;
+        border: 1px solid #000;
+      }
+
+      input {
+        display: none;
+      }
+
+      .button-clear {
+        margin: 0;
+        top: 40px;
+        left: 400px;
+        position: absolute;
+        translate: -105% 5%;
+      }
+
+      &.error {
+        canvas {
+          border: 1px solid red;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .shelter-manager-animal-adoption-form {
+    > .inner {
+      .form {
+        > div:nth-child(5) {
+          grid-template-columns: repeat(1, 1fr);
+        }
+
+        > div:nth-child(6) {
+          grid-template-columns: repeat(1, 1fr);
+
+          .form-field {
+            &:nth-child(3),
+            &:nth-child(4),
+            &:nth-child(7) {
+              grid-column: unset;
+            }
+          }
+
+          .input-multi-complex {
+            .multi-input {
+              grid-template-columns: repeat(1, 1fr);
+
+              .form-field {
+                grid-column: unset;
+              }
+            }
+          }
+        }
+
+        > div:nth-child(7) {
+          grid-template-columns: repeat(1, 1fr);
+
+          .form-field {
+            &:nth-child(1),
+            &:nth-child(4),
+            &:nth-child(5),
+            &:nth-child(8),
+            &:nth-child(11) {
+              grid-column: unset;
+            }
+          }
+        }
+
+        > div:nth-child(8) {
+          grid-template-columns: repeat(1, 1fr);
+
+          .form-field {
+            &:nth-child(1),
+            &:nth-child(2),
+            &:nth-child(3),
+            &:nth-child(6),
+            &:nth-child(7),
+            &:nth-child(8),
+            &:nth-child(9) {
+              grid-column: unset;
+            }
+          }
+
+          .input-multi-complex {
+            .multi-input {
+              grid-template-columns: repeat(1, 1fr);
+
+              .form-field {
+                grid-column: unset;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

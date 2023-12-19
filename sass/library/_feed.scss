@@ -1,0 +1,101 @@
+@use 'mixins' as mixins;
+
+.shelter-manager-animal-feed {
+  > .inner {
+    padding: 10px 0;
+
+    > .body {
+      > .filters {
+        overflow: hidden;
+        overflow-x: scroll;
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
+
+        ul {
+          margin: 0;
+          padding: 0;
+          list-style: none;
+          text-align: center;
+
+          li {
+            cursor: pointer;
+            margin: 0 5px;
+            margin-top: 0;
+            display: inline-block;
+            vertical-align: middle;
+
+            &.active,
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+
+      > .feed {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        grid-template-columns: repeat(4, 1fr);
+
+        > .item {
+          @include mixins.feed-item();
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1080px) {
+  .shelter-manager-animal-feed {
+    > .inner {
+      > .body {
+        > .feed {
+          grid-template-columns: repeat(3, auto);
+
+          > .item {
+            > .image {
+              > picture {
+                height: 200px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .shelter-manager-animal-feed {
+    > .inner {
+      > .body {
+        > .feed {
+          grid-template-columns: repeat(2, auto);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 380px) {
+  .shelter-manager-animal-feed {
+    > .inner {
+      > .body {
+        > .feed {
+          grid-template-columns: repeat(1, auto);
+
+          > .item {
+            > .image {
+              > picture {
+                height: 150px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

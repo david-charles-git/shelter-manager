@@ -1,0 +1,144 @@
+@use 'mixins' as mixins;
+
+.shelter-manager-animal-details {
+  padding: 20px;
+
+  > .inner {
+    > .top {
+      padding: 20px;
+      border-radius: 10px;
+      background-color: white;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+      > .title {
+        margin: 0;
+      }
+
+      > .description {
+        margin: 0;
+      }
+
+      > button {
+        margin: 0 auto 0 0;
+      }
+
+      > .images {
+        overflow: hidden;
+        padding-top: 50px;
+        overflow-x: scroll;
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
+
+        > .inner {
+          cursor: pointer;
+          align-items: center;
+          justify-content: start;
+
+          > .image {
+            overflow: hidden;
+            max-width: 200px;
+            max-height: 300px;
+
+            > picture {
+              max-width: 200px;
+              max-height: 300px;
+
+              img {
+                width: auto;
+                max-width: 100%;
+                max-height: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    > .bottom {
+      grid-template-columns: repeat(2, 1fr);
+
+      > .left,
+      > .right {
+        grid-gap: 0;
+        height: 100%;
+        padding: 20px;
+        border-radius: 10px;
+        align-content: stretch;
+        background-color: white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+        > * {
+          margin: 0;
+        }
+
+        h3 {
+          margin-bottom: 20px;
+        }
+      }
+    }
+
+    > .view-all {
+      margin: 0 auto;
+      font-weight: 600;
+      text-align: center;
+      border-radius: 50px;
+      display: inline-block;
+      vertical-align: middle;
+      padding: 1.25rem 2.813rem;
+    }
+
+    .shelter-manager-modal {
+      background-color: rgba(255, 255, 255, 0.8);
+
+      > .shelter-manager-background {
+        cursor: pointer;
+      }
+
+      > .inner {
+        margin: 0 auto;
+        max-width: 80vw;
+        max-height: 80vh;
+        overflow: hidden;
+
+        > .images {
+          justify-content: start;
+          grid-template-columns: repeat(3, 100%);
+
+          > .inner {
+            justify-content: start;
+
+            > .image {
+              picture {
+                text-align: center;
+
+                img {
+                  width: auto;
+                  height: auto;
+                  max-width: 80vh;
+                  max-height: 500px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .shelter-manager-animal-details {
+    > .inner {
+      > .bottom {
+        text-align: center;
+        grid-template-columns: repeat(1, 1fr);
+      }
+
+      .top > .images > .inner > .image {
+        min-width: 150px;
+      }
+    }
+  }
+}
